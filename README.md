@@ -20,7 +20,15 @@ For more details, see the [official documentation](https://pypsa-eur.readthedocs
 
 ## What does this project do?
 
-It allows you to explore, on a map, the different elements of the European electricity network (substations, AC lines, HVDC links, transformers, and converters), filtering by voltage and link type. Data is fetched directly from Zenodo and processed for efficient browser visualization.
+This project is a technical proof of concept to configure Deck.gl and MapLibre GL for interactive map visualization, using the public PyPSA-Eur dataset. It allows you to explore the European electricity network data on a map, filter by voltage and link type, and demonstrates how to efficiently process and render large geospatial datasets in the browser.
+
+## Live Demo
+
+You can view the project running on GitHub Pages at the following URL:
+
+[https://oalles.github.io/pypsa-eur-map-viewer/](https://oalles.github.io/pypsa-eur-map-viewer/)
+
+This demo allows you to explore the application directly in your browser, without needing to install anything locally.
 
 ## Data loading workflow
 

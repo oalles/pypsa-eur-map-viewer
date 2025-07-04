@@ -11,7 +11,7 @@ export const MapView: React.FC = () => {
     const [viewState, setViewState] = useState({
         longitude: 10,
         latitude: 50,
-        zoom: 4,
+        zoom: 6,
         pitch: 53,
         bearing: 22,
         maxZoom: 9,
@@ -27,7 +27,7 @@ export const MapView: React.FC = () => {
     }, [dataset, voltage, showHVDC, ready]);
 
     const handleViewStateChange = ({viewState}: any) => {
-        console.log('ViewState changed:', viewState);
+        // console.log('ViewState changed:', viewState);
         setViewState(viewState);
     };
 
