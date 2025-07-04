@@ -22,6 +22,8 @@ For more details, see the [official documentation](https://pypsa-eur.readthedocs
 
 This project is a technical proof of concept to configure Deck.gl and MapLibre GL for interactive map visualization, using the public PyPSA-Eur dataset. It allows you to explore the European electricity network data on a map, filter by voltage and link type, and demonstrates how to efficiently process and render large geospatial datasets in the browser.
 
+![App snapshot](img/snapshot.png)
+
 ## Live Demo
 
 You can view the project running on GitHub Pages at the following URL:
