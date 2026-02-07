@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "PyPSA-Eur Grid Explorer",
+    "loading": "Netzdaten werden geladen...",
+    "search": "Busse, Leitungen suchen..."
+  },
+  "layers": {
+    "title": "Ebenen",
+    "acLines": "AC-Leitungen",
+    "hvdcLinks": "HGÜ-Verbindungen",
+    "buses": "Busse",
+    "transformers": "Transformatoren",
+    "converters": "Konverter",
+    "countryBorders": "Landesgrenzen",
+    "heatmap": "Bus-Dichte"
+  },
+  "filters": {
+    "title": "Filter",
+    "voltage": "Spannungsbereich",
+    "voltageUnit": "kV",
+    "countries": "Länder",
+    "countriesAll": "Alle Länder",
+    "countriesClear": "Löschen",
+    "countriesSearch": "Länder suchen...",
+    "construction": "Baustatus",
+    "constructionAll": "Alle",
+    "constructionOperational": "In Betrieb",
+    "constructionPlanned": "Geplant"
+  },
+  "display": {
+    "title": "Anzeige",
+    "colorScheme": "Farbschema",
+    "lineThickness": "Linienstärke",
+    "thicknessCapacity": "Nach Kapazität",
+    "thicknessUniform": "Gleichmäßig",
+    "opacity": "Deckkraft"
+  },
+  "detail": {
+    "title": "Details",
+    "voltage": "Spannung",
+    "capacity": "Kapazität",
+    "power": "Leistung",
+    "length": "Länge",
+    "current": "Strom",
+    "circuits": "Stromkreise",
+    "resistance": "Widerstand",
+    "reactance": "Reaktanz",
+    "susceptance": "Suszeptanz",
+    "underground": "Unterirdisch",
+    "underConstruction": "Im Bau",
+    "type": "Typ",
+    "country": "Land",
+    "symbol": "Symbol",
+    "dc": "GS",
+    "efficiency": "Effizienz",
+    "bus0": "Bus 0",
+    "bus1": "Bus 1",
+    "connectedBuses": "Verbundene Busse",
+    "yes": "Ja",
+    "no": "Nein",
+    "coordinates": "Koordinaten"
+  },
+  "stats": {
+    "title": "Netzstatistiken",
+    "buses": "Busse",
+    "lines": "Leitungen",
+    "links": "HGÜ-Verbindungen",
+    "transformers": "Transformatoren",
+    "converters": "Konverter",
+    "countries": "Länder",
+    "totalLength": "Gesamtleitungslänge",
+    "totalACCapacity": "Gesamt-AC-Kapazität",
+    "totalHVDCCapacity": "Gesamt-HGÜ-Kapazität",
+    "voltageDistribution": "Spannungsverteilung",
+    "busesByCountry": "Busse nach Land",
+    "showing": "Zeige {{shown}} von {{total}}"
+  },
+  "common": {
+    "close": "Schließen",
+    "search": "Suchen",
+    "all": "Alle",
+    "clear": "Löschen",
+    "reset": "Zurücksetzen",
+    "collapse": "Einklappen",
+    "expand": "Ausklappen",
+    "zoomIn": "Vergrößern",
+    "zoomOut": "Verkleinern",
+    "resetView": "Ansicht Zurücksetzen",
+    "toggle3D": "3D Umschalten",
+    "language": "Sprache",
+    "stats": "Statistiken"
+  }
+}

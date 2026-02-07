@@ -3,6 +3,18 @@ export interface LineProperties {
     voltage_nom: number;
     length: number;
     s_nom: number;
+    i_nom: number;
+    circuits: number;
+    r: number;
+    x: number;
+    b: number;
+    underground: boolean;
+    under_construction: boolean;
+    type: string;
+    tags: string;
+    bus0: string;
+    bus1: string;
+    country?: string;
 }
 
 export interface BusProperties {
@@ -21,7 +33,14 @@ export interface BusProperties {
 export interface LinkProperties {
     id: string;
     p_nom: number;
-    efficiency?: number;
+    efficiency: number;
+    voltage: number;
+    length: number;
+    underground: boolean;
+    under_construction: boolean;
+    tags: string;
+    bus0: string;
+    bus1: string;
 }
 
 export interface TransformerProperties {
@@ -48,3 +67,8 @@ export type Dataset = {
     transformers?: GeoJSON.FeatureCollection<GeoJSON.LineString, TransformerProperties>;
     converters?: GeoJSON.FeatureCollection<GeoJSON.LineString, ConverterProperties>;
 };
+
+export type LayerType = 'ac-line' | 'hvdc-link' | 'bus' | 'transformer' | 'converter';
+
+export type ConstructionFilter = 'all' | 'operational' | 'planned';
+export type LineThicknessMode = 'capacity' | 'uniform';

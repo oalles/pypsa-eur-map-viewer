@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --color-glass: rgba(15, 15, 25, 0.75);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-glass-border-hover: rgba(255, 255, 255, 0.15);
+  --color-accent: #38bdf8;
+  --color-accent-dim: rgba(56, 189, 248, 0.15);
+  --color-hvdc: #00e5ff;
+  --color-transformer: #ff8c00;
+  --color-converter: #c084fc;
+  --color-surface: #0a0a0f;
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #94a3b8;
+  --color-text-muted: #64748b;
+}
+
+@utility glass {
+  background: var(--color-glass);
+  backdrop-filter: blur(16px) saturate(1.2);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+@utility glass-subtle {
+  background: rgba(15, 15, 25, 0.5);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--color-glass-border);
+  border-radius: 0.5rem;
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@utility animate-slide-in-right {
+  animation: slide-in-right 0.2s ease-out;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html, body, #root {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    font-family: var(--font-sans);
+    color: var(--color-text-primary);
+    background: var(--color-surface);
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.2);
+  }
+}

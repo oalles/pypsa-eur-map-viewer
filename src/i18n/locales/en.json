@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "PyPSA-Eur Grid Explorer",
+    "loading": "Loading network data...",
+    "search": "Search buses, lines..."
+  },
+  "layers": {
+    "title": "Layers",
+    "acLines": "AC Lines",
+    "hvdcLinks": "HVDC Links",
+    "buses": "Buses",
+    "transformers": "Transformers",
+    "converters": "Converters",
+    "countryBorders": "Country Borders",
+    "heatmap": "Bus Density"
+  },
+  "filters": {
+    "title": "Filters",
+    "voltage": "Voltage Range",
+    "voltageUnit": "kV",
+    "countries": "Countries",
+    "countriesAll": "All Countries",
+    "countriesClear": "Clear",
+    "countriesSearch": "Search countries...",
+    "construction": "Construction Status",
+    "constructionAll": "All",
+    "constructionOperational": "Operational",
+    "constructionPlanned": "Planned"
+  },
+  "display": {
+    "title": "Display",
+    "colorScheme": "Color Scheme",
+    "lineThickness": "Line Thickness",
+    "thicknessCapacity": "By Capacity",
+    "thicknessUniform": "Uniform",
+    "opacity": "Opacity"
+  },
+  "detail": {
+    "title": "Details",
+    "voltage": "Voltage",
+    "capacity": "Capacity",
+    "power": "Power",
+    "length": "Length",
+    "current": "Current",
+    "circuits": "Circuits",
+    "resistance": "Resistance",
+    "reactance": "Reactance",
+    "susceptance": "Susceptance",
+    "underground": "Underground",
+    "underConstruction": "Under Construction",
+    "type": "Type",
+    "country": "Country",
+    "symbol": "Symbol",
+    "dc": "DC",
+    "efficiency": "Efficiency",
+    "bus0": "Bus 0",
+    "bus1": "Bus 1",
+    "connectedBuses": "Connected Buses",
+    "yes": "Yes",
+    "no": "No",
+    "coordinates": "Coordinates"
+  },
+  "stats": {
+    "title": "Network Statistics",
+    "buses": "Buses",
+    "lines": "Lines",
+    "links": "HVDC Links",
+    "transformers": "Transformers",
+    "converters": "Converters",
+    "countries": "Countries",
+    "totalLength": "Total Line Length",
+    "totalACCapacity": "Total AC Capacity",
+    "totalHVDCCapacity": "Total HVDC Capacity",
+    "voltageDistribution": "Voltage Distribution",
+    "busesByCountry": "Buses by Country",
+    "showing": "Showing {{shown}} of {{total}}"
+  },
+  "common": {
+    "close": "Close",
+    "search": "Search",
+    "all": "All",
+    "clear": "Clear",
+    "reset": "Reset",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "zoomIn": "Zoom In",
+    "zoomOut": "Zoom Out",
+    "resetView": "Reset View",
+    "toggle3D": "Toggle 3D",
+    "language": "Language",
+    "stats": "Statistics"
+  }
+}

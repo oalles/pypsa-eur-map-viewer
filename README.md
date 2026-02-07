@@ -1,8 +1,14 @@
-# PyPSA‑Eur Map Viewer
+# PyPSA-Eur Grid Explorer
 
-Interactive viewer for the European high-voltage electricity network, based on the public PyPSA-Eur dataset (DOI 10.5281/zenodo.14144752).
+Interactive explorer for the European high-voltage electricity grid, built on the public PyPSA-Eur dataset (DOI 10.5281/zenodo.14144752).
 
 https://zenodo.org/records/14144752
+
+## Live Demo
+
+[https://oalles.github.io/pypsa-eur-map-viewer/](https://oalles.github.io/pypsa-eur-map-viewer/)
+
+![App snapshot](img/map.png)
 
 ## About the PyPSA-Eur Dataset
 
@@ -18,23 +24,22 @@ The PyPSA-Eur dataset is an open-source model of the European high-voltage elect
 
 For more details, see the [official documentation](https://pypsa-eur.readthedocs.io/).
 
-## What does this project do?
+## Features
 
-This project is a technical proof of concept to configure Deck.gl and MapLibre GL for interactive map visualization, using the public PyPSA-Eur dataset. It allows you to explore the European electricity network data on a map, filter by voltage and link type, and demonstrates how to efficiently process and render large geospatial datasets in the browser.
-
-![App snapshot](img/snapshot.png)
-
-## Live Demo
-
-You can view the project running on GitHub Pages at the following URL:
-
-[https://oalles.github.io/pypsa-eur-map-viewer/](https://oalles.github.io/pypsa-eur-map-viewer/)
-
-This demo allows you to explore the application directly in your browser, without needing to install anything locally.
+- **6 layer types** — AC lines, HVDC links, buses, transformers, converters, and heatmap
+- **Advanced filtering** — dual-range voltage slider, multi-select country picker, construction status toggle
+- **Detail panel** — slide-in panel with element properties on click
+- **Quick search** — Cmd+K / Ctrl+K command palette to find elements
+- **Statistics** — charts and summaries powered by Recharts
+- **Internationalization** — EN, ES, FR, DE
+- **Keyboard shortcuts** — quick toggles for layers and panels
+- **Color schemes** — switchable color palettes for network layers
+- **Display controls** — line width, opacity, and point radius adjustments
+- **Glassmorphic UI** — translucent overlay panels on a full-screen map
 
 ## Data loading workflow
 
-Before starting the application, you need to download and prepare the data. Use the following script:
+Before starting the application, download and prepare the data:
 
 ```bash
 pnpm exec node scripts/fetch-data.mjs
@@ -46,24 +51,34 @@ This script downloads the required CSV files (buses, lines, links, transformers,
 
 ## How is the data used?
 
-- The downloaded CSV files are automatically transformed into GeoJSON collections when the app starts.
-- Each element type (lines, buses, links, etc.) is rendered as a visual layer on the map using Deck.gl.
-- You can filter by voltage range and show/hide HVDC links from the interface.
+CSV files are loaded at startup and processed through a multi-stage pipeline:
+
+1. **Parse** — PapaParse streams each CSV into typed rows
+2. **Geometry** — WKT strings are parsed into coordinate arrays
+3. **GeoJSON** — Rows are converted to GeoJSON Feature collections
+4. **Store** — Zustand holds the full dataset and UI state
+5. **Filter** — A memoized `useFilteredData` hook applies voltage, country, and construction filters
+6. **Render** — Individual deck.gl layers (PathLayer, ScatterplotLayer, HeatmapLayer) consume the filtered features
 
 ## Stack
 
 * React 18 + TypeScript
-* Zustand state
+* Zustand (state management)
 * MapLibre GL 3
 * Deck.gl 9
-* PapaParse CSV parser
-* No backend – data fetched directly from Zenodo
+* Tailwind CSS v4 (CSS-first config)
+* Radix UI (accessible primitives)
+* cmdk (command palette)
+* i18next + react-i18next
+* Recharts
+* Lucide React (icons)
+* PapaParse (CSV parsing)
 
 ## Development
 
 ```bash
 pnpm install
-pnpm exec node scripts/fetch-data.mjs # Download and prepare data
+pnpm exec node scripts/fetch-data.mjs   # download and prepare data
 pnpm dev
 ```
 
@@ -78,5 +93,9 @@ Make sure the repository name matches **pypsa-eur-map-viewer** or update `base` 
 
 ## Notes
 
-* For performance, only the first 15,000 lines are loaded; you can adjust this limit in `hooks/useDataset.ts`.
 * Zenodo allows CORS; if unavailable, you can proxy the CSV files.
+
+## Statistics
+
+![Stats](img/stats.png)
+

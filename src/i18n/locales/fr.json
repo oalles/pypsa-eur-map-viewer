@@ -1,0 +1,93 @@
+{
+  "app": {
+    "title": "PyPSA-Eur Grid Explorer",
+    "loading": "Chargement des données réseau...",
+    "search": "Rechercher bus, lignes..."
+  },
+  "layers": {
+    "title": "Couches",
+    "acLines": "Lignes AC",
+    "hvdcLinks": "Liaisons HVDC",
+    "buses": "Bus",
+    "transformers": "Transformateurs",
+    "converters": "Convertisseurs",
+    "countryBorders": "Frontières",
+    "heatmap": "Densité de Bus"
+  },
+  "filters": {
+    "title": "Filtres",
+    "voltage": "Plage de Tension",
+    "voltageUnit": "kV",
+    "countries": "Pays",
+    "countriesAll": "Tous les Pays",
+    "countriesClear": "Effacer",
+    "countriesSearch": "Rechercher pays...",
+    "construction": "État de Construction",
+    "constructionAll": "Tous",
+    "constructionOperational": "Opérationnel",
+    "constructionPlanned": "Planifié"
+  },
+  "display": {
+    "title": "Affichage",
+    "colorScheme": "Palette de Couleurs",
+    "lineThickness": "Épaisseur des Lignes",
+    "thicknessCapacity": "Par Capacité",
+    "thicknessUniform": "Uniforme",
+    "opacity": "Opacité"
+  },
+  "detail": {
+    "title": "Détails",
+    "voltage": "Tension",
+    "capacity": "Capacité",
+    "power": "Puissance",
+    "length": "Longueur",
+    "current": "Courant",
+    "circuits": "Circuits",
+    "resistance": "Résistance",
+    "reactance": "Réactance",
+    "susceptance": "Susceptance",
+    "underground": "Souterrain",
+    "underConstruction": "En Construction",
+    "type": "Type",
+    "country": "Pays",
+    "symbol": "Symbole",
+    "dc": "CC",
+    "efficiency": "Efficacité",
+    "bus0": "Bus 0",
+    "bus1": "Bus 1",
+    "connectedBuses": "Bus Connectés",
+    "yes": "Oui",
+    "no": "Non",
+    "coordinates": "Coordonnées"
+  },
+  "stats": {
+    "title": "Statistiques du Réseau",
+    "buses": "Bus",
+    "lines": "Lignes",
+    "links": "Liaisons HVDC",
+    "transformers": "Transformateurs",
+    "converters": "Convertisseurs",
+    "countries": "Pays",
+    "totalLength": "Longueur Totale des Lignes",
+    "totalACCapacity": "Capacité AC Totale",
+    "totalHVDCCapacity": "Capacité HVDC Totale",
+    "voltageDistribution": "Distribution de Tension",
+    "busesByCountry": "Bus par Pays",
+    "showing": "Affichage {{shown}} sur {{total}}"
+  },
+  "common": {
+    "close": "Fermer",
+    "search": "Rechercher",
+    "all": "Tous",
+    "clear": "Effacer",
+    "reset": "Réinitialiser",
+    "collapse": "Réduire",
+    "expand": "Développer",
+    "zoomIn": "Zoom Avant",
+    "zoomOut": "Zoom Arrière",
+    "resetView": "Vue Initiale",
+    "toggle3D": "Basculer 3D",
+    "language": "Langue",
+    "stats": "Statistiques"
+  }
+}
