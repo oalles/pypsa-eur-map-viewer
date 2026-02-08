@@ -2,6 +2,7 @@ import {useEffect} from 'react';
 import Papa from 'papaparse';
 import {Dataset} from '../types';
 import useNetworkStore from '../store/network';
+import {buildGraphIndex} from '@/lib/graph';
 
 const BASE = import.meta.env.BASE_URL + 'data/';
 const FILES = {
@@ -33,6 +34,7 @@ function toBool(v: any): boolean {
 
 export function useDataset() {
     const setDataset = useNetworkStore(s => s.setDataset);
+    const setGraphIndex = useNetworkStore(s => s.setGraphIndex);
     useEffect(() => {
         (async () => {
             const data: Record<string, any[]> = {};
@@ -161,6 +163,11 @@ export function useDataset() {
             };
 
             setDataset(ds);
+
+            // Build graph index for simulation
+            const graphIndex = buildGraphIndex(ds);
+            setGraphIndex(graphIndex);
+            console.log(`[Graph] Built index: ${graphIndex.busCount} buses, ${graphIndex.edgeCount} edges`);
         })();
-    }, [setDataset]);
+    }, [setDataset, setGraphIndex]);
 }

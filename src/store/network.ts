@@ -1,10 +1,12 @@
 import {create} from 'zustand';
 import {devtools} from 'zustand/middleware';
 import {Dataset, ConstructionFilter, LineThicknessMode} from '../types';
+import type {GraphIndex} from '@/lib/graph';
 
 interface State {
     ready: boolean;
     dataset: Dataset;
+    graphIndex: GraphIndex | null;
 
     // Visibility toggles
     showBuses: boolean;
@@ -21,7 +23,6 @@ interface State {
     underConstructionFilter: ConstructionFilter;
 
     // Display settings
-    colorScheme: string;
     lineThicknessMode: LineThicknessMode;
     layerOpacity: number;
 
@@ -45,6 +46,7 @@ interface State {
 
     // Actions
     setDataset: (d: Dataset) => void;
+    setGraphIndex: (g: GraphIndex) => void;
     setVoltage: (v: [number, number]) => void;
     setShowBuses: (v: boolean) => void;
     setShowACLines: (v: boolean) => void;
@@ -55,7 +57,6 @@ interface State {
     setShowHeatmap: (v: boolean) => void;
     setSelectedCountries: (v: string[]) => void;
     setUnderConstructionFilter: (v: ConstructionFilter) => void;
-    setColorScheme: (v: string) => void;
     setLineThicknessMode: (v: LineThicknessMode) => void;
     setLayerOpacity: (v: number) => void;
     setSidebarOpen: (v: boolean) => void;
@@ -71,6 +72,7 @@ const useNetworkStore = create<State>()(
         (set) => ({
             ready: false,
             dataset: {},
+            graphIndex: null,
 
             showBuses: true,
             showACLines: true,
@@ -84,7 +86,6 @@ const useNetworkStore = create<State>()(
             selectedCountries: [],
             underConstructionFilter: 'all',
 
-            colorScheme: 'viridis',
             lineThicknessMode: 'capacity',
             layerOpacity: 0.85,
 
@@ -105,6 +106,7 @@ const useNetworkStore = create<State>()(
             viewStateVersion: 0,
 
             setDataset: (d) => set({dataset: d, ready: true}),
+            setGraphIndex: (g) => set({graphIndex: g}),
             setVoltage: (v) => set({voltage: v}),
             setShowBuses: (v) => set({showBuses: v}),
             setShowACLines: (v) => set({showACLines: v}),
@@ -115,7 +117,6 @@ const useNetworkStore = create<State>()(
             setShowHeatmap: (v) => set({showHeatmap: v}),
             setSelectedCountries: (v) => set({selectedCountries: v}),
             setUnderConstructionFilter: (v) => set({underConstructionFilter: v}),
-            setColorScheme: (v) => set({colorScheme: v}),
             setLineThicknessMode: (v) => set({lineThicknessMode: v}),
             setLayerOpacity: (v) => set({layerOpacity: v}),
             setSidebarOpen: (v) => set({sidebarOpen: v}),

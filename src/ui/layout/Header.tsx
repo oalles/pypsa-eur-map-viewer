@@ -5,6 +5,7 @@ import useNetworkStore from '@/store/network';
 import {useFilteredData} from '@/hooks/useFilteredData';
 import {useNetworkStats} from '@/hooks/useNetworkStats';
 import {formatNumber} from '@/lib/utils';
+import {ModeSelector} from './ModeSelector';
 
 const LANGUAGES = [
     {code: 'en', label: 'EN'},
@@ -29,7 +30,7 @@ export const Header: React.FC = () => {
                 </h1>
             </div>
 
-            <div className="hidden md:flex items-center gap-3 ml-4 text-[11px] font-mono text-text-muted">
+            <div className="hidden xl:flex items-center gap-3 ml-4 text-[11px] font-mono text-text-muted">
                 <span>{formatNumber(stats.busCount)} {t('stats.buses')}</span>
                 <span className="text-glass-border">|</span>
                 <span>{formatNumber(stats.lineCount)} {t('stats.lines')}</span>
@@ -42,6 +43,8 @@ export const Header: React.FC = () => {
             </div>
 
             <div className="flex-1" />
+
+            <ModeSelector />
 
             <button
                 onClick={() => setSearchOpen(true)}

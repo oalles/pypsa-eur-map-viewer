@@ -1,19 +1,4 @@
-import chroma from 'chroma-js';
-
 export const VOLTAGE_DOMAIN: [number, number] = [50, 750];
-
-export const COLOR_SCHEMES: [string, string][] = [
-    ['viridis', 'Viridis'],
-    ['YlGnBu', 'Blue-Green'],
-    ['YlOrRd', 'Yellow-Red'],
-    ['Spectral', 'Spectral'],
-    ['RdYlBu', 'Red-Blue'],
-    ['OrRd', 'Orange-Red'],
-];
-
-export function getColorScale(scheme: string): chroma.Scale {
-    return chroma.scale(scheme as any).domain(VOLTAGE_DOMAIN);
-}
 
 export const LAYER_COLORS = {
     hvdc: [0, 229, 255] as [number, number, number],

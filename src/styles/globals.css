@@ -42,6 +42,15 @@
   animation: slide-in-right 0.2s ease-out;
 }
 
+@keyframes fault-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@utility animate-fault-pulse {
+  animation: fault-pulse 1.5s ease-in-out infinite;
+}
+
 @layer base {
   * {
     box-sizing: border-box;

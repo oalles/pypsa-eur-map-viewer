@@ -24,17 +24,38 @@ The PyPSA-Eur dataset is an open-source model of the European high-voltage elect
 
 For more details, see the [official documentation](https://pypsa-eur.readthedocs.io/).
 
-## Features
+## Modes
+
+The application has two main modes, selectable from the header:
+
+### Explore
+
+The default mode. Browse the European transmission grid interactively:
 
 - **6 layer types** — AC lines, HVDC links, buses, transformers, converters, and heatmap
 - **Advanced filtering** — dual-range voltage slider, multi-select country picker, construction status toggle
-- **Detail panel** — slide-in panel with element properties on click
-- **Quick search** — Cmd+K / Ctrl+K command palette to find elements
+- **Detail panel** — click any element to see its properties (voltage, capacity, length, etc.)
+- **Quick search** — Cmd+K / Ctrl+K command palette to find elements by name or ID
 - **Statistics** — charts and summaries powered by Recharts
-- **Internationalization** — EN, ES, FR, DE
-- **Keyboard shortcuts** — quick toggles for layers and panels
 - **Color schemes** — switchable color palettes for network layers
 - **Display controls** — line width, opacity, and point radius adjustments
+
+### Simulate (new)
+
+A topological blackout simulator. It models what happens when grid components fail: the network splits into islands, and each island is either **energized** (still connected to a power source) or in **blackout**.
+
+**How it works:**
+
+1. **Choose energy sources** — Select countries whose buses act as generation sources (all buses in those countries are marked as energized). Alternatively, switch to *Manual* mode and click individual buses on the map.
+2. **Create faults** — Click buses, AC lines, or HVDC links on the map to simulate failures. These elements are removed from the grid graph.
+3. **See the result** — The simulator runs a BFS connected-components algorithm (in a Web Worker) and colors the map: energized regions stay lit, disconnected regions go dark. Metrics show the number of components, blackout buses, and percentage affected.
+
+> **Note:** This is a simplified topological model for educational purposes. It does not calculate real power flow, voltages, thermal limits, or protection system behavior. Sources are binary (on/off) with no generation capacity limits.
+
+## Other Features
+
+- **Internationalization** — EN, ES, FR, DE
+- **Keyboard shortcuts** — quick toggles for layers and panels
 - **Glassmorphic UI** — translucent overlay panels on a full-screen map
 
 ## Data loading workflow
@@ -57,8 +78,9 @@ CSV files are loaded at startup and processed through a multi-stage pipeline:
 2. **Geometry** — WKT strings are parsed into coordinate arrays
 3. **GeoJSON** — Rows are converted to GeoJSON Feature collections
 4. **Store** — Zustand holds the full dataset and UI state
-5. **Filter** — A memoized `useFilteredData` hook applies voltage, country, and construction filters
-6. **Render** — Individual deck.gl layers (PathLayer, ScatterplotLayer, HeatmapLayer) consume the filtered features
+5. **Graph index** — An adjacency map is built from buses and edges (lines, links, transformers, converters) for the simulation engine
+6. **Filter** — A memoized `useFilteredData` hook applies voltage, country, and construction filters
+7. **Render** — Individual deck.gl layers (PathLayer, ScatterplotLayer, HeatmapLayer) consume the filtered features
 
 ## Stack
 

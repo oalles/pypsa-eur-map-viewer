@@ -1,12 +1,12 @@
 import React from 'react';
 import {useTranslation} from 'react-i18next';
 import chroma from 'chroma-js';
-import useNetworkStore from '@/store/network';
+
+const COLOR_SCHEME = 'YlGnBu';
 
 export const Legend: React.FC = () => {
     const {t} = useTranslation();
-    const colorScheme = useNetworkStore(s => s.colorScheme);
-    const scale = chroma.scale(colorScheme as any).domain([50, 750]);
+    const scale = chroma.scale(COLOR_SCHEME).domain([50, 750]);
     const stops = [50, 150, 300, 450, 600, 750];
 
     const gradientColors = Array.from({length: 20}, (_, i) => {

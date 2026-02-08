@@ -14,8 +14,6 @@ export const StatsOverlay: React.FC = () => {
     const {t} = useTranslation();
     const statsOpen = useNetworkStore(s => s.statsOpen);
     const setStatsOpen = useNetworkStore(s => s.setStatsOpen);
-    const colorScheme = useNetworkStore(s => s.colorScheme);
-
     const filtered = useFilteredData();
     const dataset = useNetworkStore(s => s.dataset);
     const stats = useNetworkStats(filtered);
@@ -23,7 +21,7 @@ export const StatsOverlay: React.FC = () => {
 
     if (!statsOpen) return null;
 
-    const scale = chroma.scale(colorScheme as any).domain([50, 750]);
+    const scale = chroma.scale('YlGnBu').domain([50, 750]);
 
     return (
         <div className="absolute inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm" onClick={() => setStatsOpen(false)}>

@@ -4,7 +4,6 @@ import useNetworkStore from '@/store/network';
 import {LayerToggles} from '@/ui/sidebar/LayerToggles';
 import {VoltageFilter} from '@/ui/sidebar/VoltageFilter';
 import {CountryFilter} from '@/ui/sidebar/CountryFilter';
-import {ColorSchemeSelector} from '@/ui/sidebar/ColorSchemeSelector';
 import {DisplaySettings} from '@/ui/sidebar/DisplaySettings';
 
 export const Sidebar: React.FC = () => {
@@ -38,8 +37,6 @@ export const Sidebar: React.FC = () => {
                         <VoltageFilter />
                         <Divider />
                         <CountryFilter />
-                        <Divider />
-                        <ColorSchemeSelector />
                         <Divider />
                         <DisplaySettings />
                     </div>
