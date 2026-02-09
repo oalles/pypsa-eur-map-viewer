@@ -2,15 +2,15 @@
 
 Interactive explorer for the European high-voltage electricity grid, built on the public PyPSA-Eur dataset (DOI 10.5281/zenodo.14144752).
 
-https://zenodo.org/records/14144752
-
 ## Live Demo
 
 [https://oalles.github.io/pypsa-eur-map-viewer/](https://oalles.github.io/pypsa-eur-map-viewer/)
 
-![App snapshot](img/map.png)
+![App snapshot](img/pypsa.gif)
 
 ## About the PyPSA-Eur Dataset
+
+https://zenodo.org/records/14144752
 
 The PyPSA-Eur dataset is an open-source model of the European high-voltage electricity transmission network. It includes detailed information on substations, AC lines, HVDC links, transformers, and converters for 37 European countries. The dataset is designed for energy system analysis and research, and is widely used in academic and industry studies.
 
